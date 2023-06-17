@@ -1,0 +1,20 @@
+version: "3"
+services:
+  syncplay:
+    image: kayabe/syncplay-server:latest
+    restart: always
+    ports:
+      - 8999:8999
+    environment:
+      - SALT=E1F53135E559C253
+      - PORT=8999
+      - PASSWORD=CHANGEME
+      - ISOLATE=FALSE
+      - DISABLEREADY=FALSE
+      - DISABLECHAT=FALSE
+      - MAXCHATLENGTH=120
+      - MAXUNAMELENGTH=20
+      - MOTD=TRUE
+      - TLS=TRUE
+    volumes:
+      - ./syncplay-config:/config
